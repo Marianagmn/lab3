@@ -1,0 +1,238 @@
+/* ===============================
+   RESET Y BASE
+================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #5b2ca0;        /* Morado principal */
+  --primary-dark: #432070;   /* Morado oscuro */
+  --background: #e6f2ff;     /* Azul claro fondo */
+  --text: #1a1a1a;
+  --white: #ffffff;
+  --border: #cbd5e1;
+  --focus: #ffbf47;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Contenedor central */
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* ===============================
+   HEADER
+================================= */
+
+.header {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  height: 48px;
+}
+
+/* ===============================
+   NAVEGACIÓN
+================================= */
+
+.nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav a {
+  display: block;
+  padding: 0.75rem 1rem;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.nav a:hover,
+.nav a:focus {
+  background: var(--primary-dark);
+  outline: none;
+}
+
+/* Botón hamburguesa */
+.nav-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  background: var(--white);
+  height: 3px;
+  width: 25px;
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before { top: -8px; }
+.hamburger::after { top: 8px; }
+
+/* Mobile first */
+.nav {
+  display: none;
+}
+
+.nav.open {
+  display: block;
+}
+
+/* ===============================
+   HERO
+================================= */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ===============================
+   FORMULARIO (CENTRADO)
+================================= */
+
+.form-section {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* CENTRADO */
+  text-align: center;
+}
+
+form {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+input,
+select,
+button {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+small {
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+}
+
+/* ===============================
+   FOOTER
+================================= */
+
+.footer {
+  background: var(--primary-dark);
+  color: var(--white);
+  margin-top: 3rem;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+/* ===============================
+   MEDIA QUERIES
+================================= */
+
+@media (min-width: 768px) {
+
+  .nav {
+    display: block !important;
+  }
+
+  .nav ul {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hero-content {
+    padding-left: 2rem;
+  }
+}
